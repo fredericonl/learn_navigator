@@ -33,9 +33,10 @@ class Botoes extends StatelessWidget {
             RaisedButton(
               child: Text('Produtos'),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SegundaPagina(),
-                ));
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/produtos',
+                  ModalRoute.withName('/'),
+                );
               },
             ),
             RaisedButton(

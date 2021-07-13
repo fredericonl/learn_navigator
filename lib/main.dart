@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navegacao/screens/botoes.dart';
 import 'package:navegacao/screens/primeira_pagina.dart';
+import 'package:navegacao/screens/segunda_pagina.dart';
 import 'package:navegacao/screens/terceira_pagina.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       home: Botoes(),
       routes: {
         '/financeiro': (_) => TerceiraPagina(),
+        '/produtos': (_) => SegundaPagina(),
       },
     );
   }
