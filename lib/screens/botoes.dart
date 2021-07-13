@@ -30,6 +30,7 @@ class Botoes extends StatelessWidget {
                 );
               },
             ),
+            //Melhor maneira de utilizara navegação. Elimina a pilha de telas que estão abertas;
             RaisedButton(
               child: Text('Produtos'),
               onPressed: () {
