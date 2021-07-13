@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navegacao/screens/primeira_pagina.dart';
+import 'package:navegacao/screens/retorno.dart';
 import 'package:navegacao/screens/segunda_pagina.dart';
 import 'package:navegacao/screens/terceira_pagina.dart';
 
@@ -33,8 +34,8 @@ class Botoes extends StatelessWidget {
             //Melhor maneira de utilizara navegação. Elimina a pilha de telas que estão abertas;
             RaisedButton(
               child: Text('Produtos'),
-              onPressed: () {
-                Navigator.of(context).pushNamedAndRemoveUntil(
+              onPressed: () async {
+                await Navigator.of(context).pushNamedAndRemoveUntil(
                   '/produtos',
                   ModalRoute.withName('/'),
                 );
@@ -44,6 +45,25 @@ class Botoes extends StatelessWidget {
               child: Text('Financeiro'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/financeiro');
+              },
+            ),
+            RaisedButton(
+              child: Text('Retorno de Valor'),
+              onPressed: () async {
+                final idPessoa = await Navigator.of(context).push<int>(
+                  MaterialPageRoute(
+                    builder: (_) => Retorno(),
+                    //Enviando parâmetros
+                    settings: RouteSettings(arguments: 1000),
+                  ),
+                );
+                print('O idPessoa é: $idPessoa');
+              },
+            ),
+            RaisedButton(
+              child: Text('MediaQuery'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/media_query');
               },
             ),
           ],

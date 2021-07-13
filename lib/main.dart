@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navegacao/screens/botoes.dart';
+import 'package:navegacao/screens/media_query.dart';
 import 'package:navegacao/screens/primeira_pagina.dart';
 import 'package:navegacao/screens/segunda_pagina.dart';
 import 'package:navegacao/screens/terceira_pagina.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/financeiro': (_) => TerceiraPagina(),
         '/produtos': (_) => SegundaPagina(),
+        '/media_query': (_) => MQuery(),
       },
     );
   }
